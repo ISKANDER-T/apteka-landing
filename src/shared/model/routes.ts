@@ -4,6 +4,7 @@ export const ROUTES = {
   HOME: "/",
   ADMIN: "/admin",
   LOGIN: "/login",
+  MARY: "/mary",
 } as const;
 
 // export type PathParams = {

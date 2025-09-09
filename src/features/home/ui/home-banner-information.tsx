@@ -8,7 +8,7 @@ import {
 
 export const HomeBannerInformation = () => {
   return (
-    <div className="flex justify-between items-center gap-5" id="darixana">
+    <div className="flex gap-5" id="darixana">
       <Card className="bg-[#D9ECFA] basis-[60%] pb-24 shadow-none">
         <CardHeader className="text-[64px] font-semibold">
           Dárixanamız haqqında
@@ -22,7 +22,7 @@ export const HomeBannerInformation = () => {
           <img src={tabletkaImg} className="-my-24" />
         </CardFooter>
       </Card>
-      <img src={aptekaImg} />
+      <img src={aptekaImg} className="basis-[40%]" />
     </div>
   );
 };

@@ -6,7 +6,7 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
 } from "@radix-ui/react-navigation-menu";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const navMenu: { text: string; href: string }[] = [
   { href: "#darixana", text: "Dárixana haqqında" },
@@ -15,7 +15,8 @@ const navMenu: { text: string; href: string }[] = [
 ];
 
 export const HomeMenu = () => {
-  const { hash } = useLocation();
+  const { hash, pathname } = useLocation();
+  const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState(hash);
 
   useEffect(() => {
@@ -47,8 +48,11 @@ export const HomeMenu = () => {
             </NavigationMenuItem>
           ))}
         </NavigationMenuList>
-        <Button className="bg-[#FF791F] hover:bg-[#e56a1a] transition-colors duration-200">
-          Mary Shop
+        <Button
+          onClick={() => navigate(pathname === "/mary" ? "/" : "/mary")}
+          className="bg-[#FF791F] hover:bg-[#e56a1a] transition-colors duration-200"
+        >
+          {pathname === "/mary" ? "Apteka" : "Mary Shop"}
         </Button>
       </NavigationMenu>
     </div>

@@ -11,12 +11,7 @@ export const HomeBanner = () => {
         tarmaǵınıń biri bolıp, biziń maqsetimiz — xalqımızdı arzan hám <br />{" "}
         sapalı dári-darmaq ónimleri menen támiyinlew.
       </div>
-      <img
-        src={symbolImg}
-        width={579}
-        height={633}
-        className="absolute bottom-0 right-5"
-      />
+      <img src={symbolImg} className="absolute bottom-0 right-5" />
     </div>
   );
 };

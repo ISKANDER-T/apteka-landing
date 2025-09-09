@@ -23,7 +23,6 @@ export const router = createBrowserRouter([
               </>
             ),
             children: [
-
               {
                 path: ROUTES.ADMIN,
                 lazy: () => import("@/features/admin/admin.page"),
@@ -39,6 +38,10 @@ export const router = createBrowserRouter([
       {
         path: ROUTES.LOGIN,
         lazy: () => import("@/features/auth/login.page"),
+      },
+      {
+        path: ROUTES.MARY,
+        lazy: () => import("@/features/mary/mary.page"),
       },
     ],
   },

@@ -16,10 +16,19 @@ import phone2 from "./phone-2.svg";
 import instagramImg from "./instagram.svg";
 import punkt from "./punkt.svg";
 import vakansya from "./vakansya.svg";
-
+import maryImg from "./maryImg.svg";
+import babyImg from "./baby.svg";
+import butilkaImg from "./butilka.svg";
+import listokImg from "./listok.svg";
+import maryLogoImg from "./mary-logo.svg";
 export {
   tabletkaImg,
+  maryLogoImg,
+  listokImg,
+  butilkaImg,
+  maryImg,
   instagramImg,
+  babyImg,
   phone2,
   punkt,
   logoImg2,
