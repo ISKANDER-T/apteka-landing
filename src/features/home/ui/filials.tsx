@@ -1,4 +1,5 @@
 import { aptekaImg } from "@/shared/assets";
+import { TitleBlock } from "@/shared/ui";
 import {
   Carousel,
   CarouselContent,
@@ -23,7 +24,7 @@ const filialsData: { text: string }[] = [
 export const Filials = () => {
   return (
     <div className="flex flex-col gap-5" id="filial">
-      <div className="text-[64px] font-semibold">Filiallar</div>
+      <TitleBlock text="Filiallar" />
       <Carousel className="w-full">
         <CarouselContent className="-ml-1">
           {filialsData.map((item, index) => (

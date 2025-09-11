@@ -7,6 +7,14 @@ import {
   NavigationMenuLink,
 } from "@radix-ui/react-navigation-menu";
 import { useLocation, useNavigate } from "react-router-dom";
+import {
+  SheetTrigger,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  Sheet,
+} from "@/shared/ui/kit/sheet";
+import { Menu, X } from "lucide-react";
 
 const navMenu: { text: string; href: string }[] = [
   { href: "#darixana", text: "Dárixana haqqında" },
@@ -18,6 +26,7 @@ export const HomeMenu = () => {
   const { hash, pathname } = useLocation();
   const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState(hash);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     setActiveSection(hash);
@@ -27,8 +36,53 @@ export const HomeMenu = () => {
 
   return (
     <div className="flex items-center gap-10 text-[17px]">
-      <NavigationMenu className="flex gap-10 items-center">
-        <NavigationMenuList className="flex gap-10 items-center">
+      <Sheet open={isOpen}>
+        <SheetTrigger className="sm:hidden" asChild>
+          <Button onClick={() => setIsOpen(true)} variant="ghost">
+            <Menu />
+          </Button>
+        </SheetTrigger>
+        <SheetContent className="w-xl">
+          <SheetHeader>
+            <SheetTitle className="pl-72">
+              <X onClick={() => setIsOpen(false)} />
+            </SheetTitle>
+          </SheetHeader>
+          <NavigationMenu className="flex flex-col justify-start items-start gap-5">
+            <NavigationMenuList className="flex flex-col gap-5 items-start">
+              {navMenu.map((item) => (
+                <NavigationMenuItem key={item.href}>
+                  <NavigationMenuLink
+                    className={`
+                  py-2 px-4 rounded-md transition-colors duration-200
+                  ${
+                    isActive(item.href)
+                      ? " text-[#EA473B] font-medium"
+                      : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                  }
+                `}
+                  >
+                    <a
+                      href={item.href}
+                      onClick={() => setActiveSection(item.href)}
+                    >
+                      {item.text}
+                    </a>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              ))}
+            </NavigationMenuList>
+            <Button
+              onClick={() => navigate(pathname === "/mary" ? "/" : "/mary")}
+              className="bg-[#FF791F] ml-3 hover:bg-[#e56a1a] transition-colors duration-200"
+            >
+              {pathname === "/mary" ? "Apteka" : "Mary Shop"}
+            </Button>
+          </NavigationMenu>
+        </SheetContent>
+      </Sheet>
+      <NavigationMenu className="hidden sm:flex gap-5 items-center">
+        <NavigationMenuList className="flex sm:gap-5 items-center">
           {navMenu.map((item) => (
             <NavigationMenuItem key={item.href}>
               <NavigationMenuLink

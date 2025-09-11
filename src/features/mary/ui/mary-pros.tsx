@@ -1,69 +1,45 @@
 import { butilkaImg, listokImg, naushnik } from "@/shared/assets";
-import { Card } from "@/shared/ui/kit/card";
-import { ReactNode } from "react";
-
-const CardCustom = ({
-  content,
-  title,
-  imgUrl,
-}: {
-  title: string;
-  content: ReactNode;
-  imgUrl: string;
-}) => {
-  return (
-    <Card className="bg-[#FFF0E5] shadow-none flex flex-row items-center justify-between px-8">
-      <div className="flex flex-col gap-4">
-        <div className="text-4xl font-semibold">{title}</div>
-        <div className="text-2xl leading-9 relative  text-[#00000099]">
-          {content}
-        </div>
-      </div>
-      <div>
-        <img src={imgUrl} />
-      </div>
-    </Card>
-  );
-};
+import { cn } from "@/shared/lib/css";
+import { ProsCard, TitleBlock } from "@/shared/ui";
 
 export const MaryPros = () => {
   return (
     <div className="flex flex-col gap-5">
-      <div className="text-[64px] font-semibold">Biz usınıs etemiz</div>
-      <div className="grid grid-cols-2 gap-5">
-        <CardCustom
-          content={
+      <TitleBlock className="text-[#000000E5]" text="Biz usınıs etemiz" />
+      <div className={cn("grid grid-cols-1", "md:grid-cols-2 gap-5")}>
+        <ProsCard
+          text={
             <>
-              Balanıń ósip-óniwi ushın kerek bolatuǵın <br />
-              azıqlar, salamatlıǵı ushın krem, shampun <br />
-              hám basqa da gigiena ónimleri.
+              Balanıń ósip-óniwi ushın kerek bolatuǵın azıqlar, salamatlıǵı
+              ushın krem, shampun hám basqa da gigiena ónimleri.
             </>
           }
           imgUrl={butilkaImg}
           title="Ana hám bala bólimi"
+          className="bg-[#FFF0E5]"
         />
-        <CardCustom
-          content={
+        <ProsCard
+          text={
             <>
-              Termometrler, tanometrler, ingalyatorlar <br /> hám taǵı da
-              salamatlıqtı baqlap barıwǵa <br /> arnalǵan, qolaylı, isenimli
-              úskeneler.
+              Termometrler, tanometrler, ingalyatorlar hám taǵı da salamatlıqtı
+              baqlap barıwǵa arnalǵan, qolaylı, isenimli úskeneler.
             </>
           }
           imgUrl={naushnik}
           title="Medicinalıq úskeneler"
+          className="bg-[#FFF0E5]"
         />
       </div>
-      <CardCustom
-        content={
+      <ProsCard
+        text={
           <>
-            Immunitetti qollap-quwatlaw ushın vitaminler hám tábiyiw <br />
-            qosımshalar. Tek ǵana tekserilgen hám sertifikatlanǵan <br />
-            ónimler.
+            Immunitetti qollap-quwatlaw ushın vitaminler hám tábiyiw
+            qosımshalar. Tek ǵana tekserilgen hám sertifikatlanǵan ónimler.
           </>
         }
         imgUrl={listokImg}
         title="Biologiyalıq aktiv qosımshalar"
+        className="bg-[#FFF0E5]"
       />
     </div>
   );

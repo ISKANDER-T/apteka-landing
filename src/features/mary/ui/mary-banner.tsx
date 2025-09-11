@@ -1,18 +1,20 @@
 import { maryImg } from "@/shared/assets";
+import { Banner } from "@/shared/ui";
 
 export const MaryBanner = () => {
   return (
-    <div className="bg-[#FF9046] rounded-[24px] px-10 pt-[60px] pb-96 flex flex-col gap-9 relative">
-      <div className="text-8xl text-white font-semibold leading-[110px]">
-        Mary shop
-      </div>
-      <div className="text-2xl text-white leading-9">
-        Mary shop — balalar azıǵı hám gigiena ónimleri dúkanı. <br /> Dúkanımız
-        tek ǵana joqarı sapadaǵı hám qadaǵalawdan <br /> ótken, qáwipsiz
-        ónimlerdi usınıs etedi. Perzentińizdiń <br /> densawlıǵı hám komfortı
-        ushın kerek bolatuǵın barlıq ónimler <br /> bizde tabıladı.
-      </div>
-      <img src={maryImg} className="absolute bottom-0 right-5" />
-    </div>
+    <Banner
+      className="bg-[#FF9046]"
+      imgUrl={maryImg}
+      title={<span className="text-white">Mary shop</span>}
+      text={
+        <span className="text-white">
+          Mary shop — balalar azıǵı hám gigiena ónimleri dúkanı. Dúkanımız tek
+          ǵana joqarı sapadaǵı hám qadaǵalawdan ótken, qáwipsiz ónimlerdi usınıs
+          etedi. Perzentińizdiń densawlıǵı hám komfortı ushın kerek bolatuǵın
+          barlıq ónimler bizde tabıladı.
+        </span>
+      }
+    />
   );
 };

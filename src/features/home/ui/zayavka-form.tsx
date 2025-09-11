@@ -17,7 +17,7 @@ export const ZayavkaForm = () => {
 
   return (
     <Form {...form}>
-      <form className="flex flex-col gap-10 w-96" onSubmit={onSubmit}>
+      <form className="flex flex-col gap-10 lg:w-96" onSubmit={onSubmit}>
         <FormField
           control={form.control}
           name="name"
@@ -72,7 +72,7 @@ export const ZayavkaForm = () => {
           <p className="text-destructive text-sm">{errorMessage}</p>
         )}
 
-        <Button disabled={isPending} type="submit" className="bg-[#5691FF]">
+        <Button disabled={isPending} type="submit" className="bg-[#5691FF] p-6">
           JOLLAW
         </Button>
       </form>

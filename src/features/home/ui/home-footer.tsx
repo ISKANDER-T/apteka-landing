@@ -5,32 +5,21 @@ import {
   punkt,
   vakansya,
 } from "@/shared/assets";
+import { Footer } from "@/shared/ui";
 
-export const Footer = () => {
+export const HomeFooter = () => {
   return (
-    <div className="bg-[#2C3033] p-8 py-10 flex flex-col gap-8">
-      <div className="flex flex-row justify-between items-center">
-        <div className="text-[28px] font-bold text-white">
-          Ájiniyaz Qaraqalpaq
-        </div>
-        <img src={logoImg2} />
-      </div>
-
-      <div className="leading-9 flex flex-col gap-8">
-        <div className="text-[#FFFFFF99] text-2xl flex gap-5">
-          <img src={phone2} /> <span>+998 95 609 77 87</span>
-        </div>
-        <div className="text-[#FFFFFF99] text-2xl flex gap-5">
-          <img src={instagramImg} /> <span>@ajiniyaz_qaraqalpaq_pharm</span>
-        </div>
-        <div className="text-[#FFFFFF99] text-2xl flex gap-5">
-          <img src={punkt} />{" "}
-          <span>A. Dosnazarov, 123, Nókis, Qaraqalpaqstan</span>
-        </div>
-        <div className="text-[#FFFFFF99] text-2xl flex gap-5">
-          <img src={vakansya} /> <span>Vakansya</span>
-        </div>
-      </div>
-    </div>
+    <Footer
+      title="Ájiniyaz Qaraqalpaq"
+      ImgUrlLogo={logoImg2}
+      ImgUrl1={phone2}
+      ImgUrl2={instagramImg}
+      ImgUrl3={punkt}
+      ImgUrl4={vakansya}
+      text1="+998 95 609 77 87"
+      text2="@ajiniyaz_qaraqalpaq_pharm"
+      text3="A. Dosnazarov, 123, Nókis, Qaraqalpaqstan"
+      text4="Vakansya"
+    />
   );
 };
