@@ -7,14 +7,8 @@ import {
   NavigationMenuLink,
 } from "@radix-ui/react-navigation-menu";
 import { useLocation, useNavigate } from "react-router-dom";
-import {
-  SheetTrigger,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  Sheet,
-} from "@/shared/ui/kit/sheet";
-import { Menu, X } from "lucide-react";
+import { SheetTrigger, SheetContent, Sheet } from "@/shared/ui/kit/sheet";
+import { Menu } from "lucide-react";
 
 const navMenu: { text: string; href: string }[] = [
   { href: "#darixana", text: "Dárixana haqqında" },
@@ -26,7 +20,6 @@ export const HomeMenu = () => {
   const { hash, pathname } = useLocation();
   const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState(hash);
-  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     setActiveSection(hash);
@@ -36,19 +29,14 @@ export const HomeMenu = () => {
 
   return (
     <div className="flex items-center gap-10 text-[17px]">
-      <Sheet open={isOpen}>
+      <Sheet>
         <SheetTrigger className="sm:hidden" asChild>
-          <Button onClick={() => setIsOpen(true)} variant="ghost">
+          <Button variant="ghost">
             <Menu />
           </Button>
         </SheetTrigger>
-        <SheetContent className="w-xl">
-          <SheetHeader>
-            <SheetTitle className="pl-72">
-              <X onClick={() => setIsOpen(false)} />
-            </SheetTitle>
-          </SheetHeader>
-          <NavigationMenu className="flex flex-col justify-start items-start gap-5">
+        <SheetContent>
+          <NavigationMenu className="flex flex-col justify-start items-start gap-5 py-10">
             <NavigationMenuList className="flex flex-col gap-5 items-start">
               {navMenu.map((item) => (
                 <NavigationMenuItem key={item.href}>
