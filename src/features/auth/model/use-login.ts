@@ -14,7 +14,7 @@ export function useLogin() {
     {
       onSuccess(data) {
         session.login(data.data);
-        setTimeout(() => navigate(ROUTES.ROLE), 0);
+        setTimeout(() => navigate(ROUTES.ADMIN), 0);
       },
     },
   );
