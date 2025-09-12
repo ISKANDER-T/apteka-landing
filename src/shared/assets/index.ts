@@ -21,8 +21,11 @@ import babyImg from "./baby.svg";
 import butilkaImg from "./butilka.svg";
 import listokImg from "./listok.svg";
 import maryLogoImg from "./mary-logo.svg";
+import appStoreImg from "./appstore.svg";
+
 export {
   tabletkaImg,
+  appStoreImg,
   maryLogoImg,
   listokImg,
   butilkaImg,

@@ -17,7 +17,14 @@ export const HomeFooter = () => {
       ImgUrl3={punkt}
       ImgUrl4={vakansya}
       text1="+998 95 609 77 87"
-      text2="@ajiniyaz_qaraqalpaq_pharm"
+      text2={
+        <a
+          href="https://www.instagram.com/ajiniyaz_qaraqalpaq_pharm/"
+          target="_blank"
+        >
+          @ajiniyaz_qaraqalpaq_pharm
+        </a>
+      }
       text3="A. Dosnazarov, 123, Nókis, Qaraqalpaqstan"
       text4="Vakansya"
     />

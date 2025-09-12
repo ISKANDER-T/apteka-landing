@@ -233,11 +233,12 @@ export const Footer = ({
   ImgUrl3: string;
   ImgUrl4: string;
   text1: string;
-  text2: string;
-  text3: string;
-  text4: string;
+  text2: ReactNode;
+  text3: ReactNode;
+  text4: ReactNode;
 }) => {
-  const ImgText = ({ imgUrl, text }: { imgUrl: string; text: string }) => {
+  const hrefNumber = text1.replace(/[^+\d]/g, "").replace(/^00/, "+");
+  const ImgText = ({ imgUrl, text }: { imgUrl: string; text: ReactNode }) => {
     return (
       <div
         className={cn(
@@ -264,7 +265,9 @@ export const Footer = ({
       </div>
 
       <div className="leading-9 flex flex-col gap-3">
-        <ImgText imgUrl={ImgUrl1} text={text1} />
+        <a href={`tel:${hrefNumber}`}>
+          <ImgText imgUrl={ImgUrl1} text={text1} />
+        </a>
         <ImgText imgUrl={ImgUrl2} text={text2} />
         <ImgText imgUrl={ImgUrl3} text={text3} />
         <ImgText imgUrl={ImgUrl4} text={text4} />

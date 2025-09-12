@@ -1,4 +1,4 @@
-import { phone, sharedImg, symbolImg2 } from "@/shared/assets";
+import { appStoreImg, phone, sharedImg, symbolImg2 } from "@/shared/assets";
 import { cn } from "@/shared/lib/css";
 
 export const Shared = () => {
@@ -31,11 +31,33 @@ export const Shared = () => {
           Mobil qosımshamız arqalı da xızmetlerimizden paydalanıwıńız hám bonus
           ballarıńızdı basqarıp <br /> barıwıńız múmkin.
         </div>
-        <div>
-          <img
-            src={sharedImg}
-            className={cn("w-[160px] h-[48px]", "lg:right-5")}
-          />
+        <div className="flex gap-3 sm:gap-5">
+          <a
+            href="https://play.google.com/store/apps/details?id=uz.yespos.ajq"
+            target="_blank"
+          >
+            <img
+              src={sharedImg}
+              className={cn(
+                "w-[130px] cursor-pointer",
+                "sm:w-[160px] sm:h-[48px]",
+                "lg:right-5",
+              )}
+            />
+          </a>
+          <a
+            href="https://apps.apple.com/uz/app/ajiniyaz-qaraqalpaq/id6677062976"
+            target="_blank"
+          >
+            <img
+              src={appStoreImg}
+              className={cn(
+                "w-[130px] cursor-pointer",
+                "sm:w-[160px] sm:h-[48px]",
+                "lg:right-5",
+              )}
+            />
+          </a>
         </div>
       </div>
       <img

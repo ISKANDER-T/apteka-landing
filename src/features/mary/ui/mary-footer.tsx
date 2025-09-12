@@ -17,7 +17,11 @@ export const MaryFooter = () => {
       ImgUrl3={punkt}
       ImgUrl4={vakansya}
       text1="+998 94 695 77 87"
-      text2="@mary_shop.nks"
+      text2={
+        <a href="https://www.instagram.com/mary_shop.nks/" target="_blank">
+          @mary_shop.nks
+        </a>
+      }
       text3="A. Dosnazarov, 123, Nókis, Qaraqalpaqstan"
       text4="Vakansya"
     />
